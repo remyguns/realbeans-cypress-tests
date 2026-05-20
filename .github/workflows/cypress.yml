@@ -9,16 +9,14 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      
-name: Checkout
-      uses: actions/checkout@v6
+      - name: Checkout
+        uses: actions/checkout@v6
 
-      
-name: Cypress run
-      uses: cypress-io/github-action@v7
-      with:
-        record: true
-      env:
-        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-        CYPRESS_SHOPIFY_PASSWORD: ${{ secrets.SHOPIFY_PASSWORD }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Cypress run
+        uses: cypress-io/github-action@v7
+        with:
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          CYPRESS_SHOPIFY_PASSWORD: ${{ secrets.SHOPIFY_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
